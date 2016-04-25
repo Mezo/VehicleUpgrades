@@ -1,3 +1,17 @@
+/*
+
+ 	Name: ExileClient_VehicleUpgrades_util_listRequirements.sqf
+
+ 	Author: Mezo
+    Copyright (c) 2016 MezoPlays
+
+    This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+ 	Description:
+    Lists the needed items to upgrade the vehicle being interacted with.
+
+*/
 _vehicle = cursorTarget;
 _vehicleClass = typeOf _vehicle;
 try

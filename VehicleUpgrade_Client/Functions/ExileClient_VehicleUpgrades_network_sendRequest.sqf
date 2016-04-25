@@ -1,3 +1,17 @@
+/*
+
+ 	Name: ExileClient_VehicleUpgrades_network_sendRequest.sqf
+
+ 	Author: Mezo
+    Copyright (c) 2016 MezoPlays
+
+    This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+ 	Description:
+    Client to Server request to upgrade the vehicle
+
+*/
 _vehicle = cursorTarget;
 _vehiclePosition = getPos _vehicle;
 _vehicleNetId = netId _vehicle;
