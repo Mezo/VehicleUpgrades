@@ -1,11 +1,15 @@
-/**
- * Post-Initialization
- *
- * Exile Mod
- * www.exilemod.com
- * © 2015 Exile Mod Team
- *
- * This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
- * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
- */
+/*
+
+        File Name: fn_postInit.sqf
+
+        Author: Mezo
+
+        Copyright (c) 2016 MezoPlays
+
+        This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+        To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+        Description:
+
+*/
 true

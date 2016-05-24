@@ -1,30 +1,27 @@
 /*
 
- 	Name: ExileServer_VehicleUpgrades_network_UpgradeVehicle.sqf
+        File Name: ExileServer_VehicleUpgrades_network_UpgradeVehicle.sqf
 
- 	Author: Mezo
-    Copyright (c) 2016 MezoPlays
+        Author: Mezo
 
-    This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
-    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+        Copyright (c) 2016 MezoPlays
 
- 	Description:
-    Processes the clients request to upgrade a vehicle
+        This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+        To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+        Description:
 
 */
+private["_playerSessionID","_package","_vehicleObject","_pincode","_vehicleOriginalClass","_vehiclePosition","_vehicleDir","_playerObject","_ownerUID","_vehicleClass","_vehicle","_logUpgrade"];
 _playerSessionID = _this select 0;
 _package = _this select 1;
-
 _vehicleObject = _package select 0;
 _pincode = _vehicleObject getVariable ["ExileAccessCode", ""];
 _vehicleOriginalClass = _package select 1;
 _vehiclePosition = getpos _vehicleObject;
 _vehicleDir = getDir _vehicleObject;
-
 _playerObject = _playerSessionID call ExileServer_system_session_getPlayerObject;
 _ownerUID = getPlayerUID _playerObject;
-
-
 try
 {
     if !(count _pincode == 4) then
@@ -56,7 +53,6 @@ try
     _playerObject allowDamage true;
     _logUpgrade = format["%1 has upgraded a %2 to a %3",(name _playerObject),(getText(configFile >> "CfgVehicles" >> _vehicleOriginalClass >> "displayName")),(getText(configFile >> "CfgVehicles" >> _vehicleClass >> "displayName"))];
     ["UPGRADE LOG",_logUpgrade] call ExileServer_VehicleUpgrades_utils_logOut;
-
 }
 catch
 {

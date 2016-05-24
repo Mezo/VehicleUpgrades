@@ -1,17 +1,18 @@
 /*
 
- 	Name: ExileClient_VehicleUpgrades_util_listRequirements.sqf
+        File Name: ExileClient_VehicleUpgrades_util_listRequirements.sqf
 
- 	Author: Mezo
-    Copyright (c) 2016 MezoPlays
+        Author: Mezo
 
-    This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
-    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+        Copyright (c) 2016 MezoPlays
 
- 	Description:
-    Lists the needed items to upgrade the vehicle being interacted with.
+        This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+        To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+        Description:
 
 */
+private["_vehicle","_vehicleClass","_neededitems","_itemclass","_itemAmmount","_itemConfig"];
 _vehicle = cursorTarget;
 _vehicleClass = typeOf _vehicle;
 try
@@ -24,7 +25,6 @@ try
     {
             throw "Get in the vehicle first!";
     };
-
     _neededitems = getArray (missionConfigFile >> "CfgVehicleUpgrades" >> "UpgradableClasses" >> _vehicleClass >> "requiredItems");
     {
         _itemclass = _x select 0;

@@ -1,24 +1,24 @@
 /*
 
- 	Name: ExileClient_VehicleUpgrades_network_sendRequest.sqf
+        File Name: ExileClient_VehicleUpgrades_network_sendRequest.sqf
 
- 	Author: Mezo
-    Copyright (c) 2016 MezoPlays
+        Author: Mezo
 
-    This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
-    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+        Copyright (c) 2016 MezoPlays
 
- 	Description:
-    Client to Server request to upgrade the vehicle
+        This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+        To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+        Description:
 
 */
+private["_vehicle","_vehiclePosition","_vehicleNetId","_vehicleObject","_vehicleOriginalClass","_requiredRespect","_inventoryCheckRet"];
 _vehicle = cursorTarget;
 _vehiclePosition = getPos _vehicle;
 _vehicleNetId = netId _vehicle;
 _vehicleObject = objectFromNetId _vehicleNetId;
 _vehicleOriginalClass = typeOf _vehicleObject;
 _requiredRespect = getNumber (missionConfigFile >> "CfgVehicleUpgrades" >> "UpgradableVehicles" >> _vehicleOriginalClass >> "neededRespect");
-
 try
 {
     if !(_vehicleOriginalClass isKindOf "AIR" || _vehicleOriginalClass isKindOf "CAR" || _vehicleOriginalClass isKindOf "TANK") then
